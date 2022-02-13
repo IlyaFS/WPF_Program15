@@ -1,0 +1,87 @@
+﻿<Window x:Class="WPF_Program15.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="RowStyle" TargetType="{x:Type TableRow}">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Background" Value="Silver"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <FlowDocumentScrollViewer>
+            <FlowDocument>
+                <Paragraph FontWeight="Bold" TextAlignment="Center">
+                    <Hyperlink NavigateUri="https://www.2035designifmo.ru/mod/assign/view.php?id=1481">ЗАДАНИЕ 15.</Hyperlink> ДОКУМЕНТЫ И ПЕЧАТЬ
+                </Paragraph>
+                <Paragraph FontWeight="Bold">Цель:</Paragraph>
+                <Paragraph>Познакомиться с фиксированными и потоковыми документами в WPF.</Paragraph>
+                <Paragraph FontWeight="Bold">Ход работы:</Paragraph>
+                <List MarkerStyle="Decimal">
+                    <ListItem>
+                        <Paragraph>выполнить задание</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>оформить отчет</Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph FontWeight="Bold">Практическая часть:</Paragraph>
+                <Paragraph>
+                    <Underline>Задание 1.</Underline> Подготовить потоковый документ по произвольной теме. Проявите вкус и фантазию при оформлении. Обязательно наличие блочных элементов Paragraph, List, Table.
+                </Paragraph>
+                <Paragraph FontWeight="Bold">СОСТОЯНИЕ ОТВЕТА:</Paragraph>
+                <Table BorderThickness="2" BorderBrush="Black" CellSpacing="10">
+                    <Table.Columns>
+                        <TableColumn Width="0.3*"/>
+                        <TableColumn Width="*"/>
+                        <TableColumn Width="1.5*"/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow Style="{StaticResource RowStyle}">                            
+                            <TableCell>
+                                <Paragraph>№ п/п</Paragraph>
+                            </TableCell>                            
+                            <TableCell>
+                                <Paragraph>Действие</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Попытка</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph>1</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Номер попытки</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>1</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow Background="Azure">
+                            <TableCell>
+                                <Paragraph>2</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Состояние ответа на задание</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Ни одной попытки</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+                <BlockUIContainer>
+                    <Border Background="Black" Width="300" BorderThickness="1">
+                        <ComboBox  Margin="2" Padding="5" SelectedIndex="0" ItemsSource="{StaticResource tasks}" HorizontalContentAlignment="Stretch"/>                       
+                    </Border>
+                </BlockUIContainer>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Window>
